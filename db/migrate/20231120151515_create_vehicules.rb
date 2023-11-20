@@ -5,7 +5,7 @@ class CreateVehicules < ActiveRecord::Migration[7.1]
       t.string :model
       t.string :description
       t.float :prix
-      t.references :user, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
