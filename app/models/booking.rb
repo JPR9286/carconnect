@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   validates :user_id, presence: true
   validates :vehicule_id, presence: true
   validates :date_debut, presence: true
-  validates :date_fin, presence: true, comparison: { :greater_than_or_equal_to :date_debut }
+  validates :date_fin, presence: true, comparison: { greater_than_or_equal_to: :date_debut }
   validates :total_prix, presence: true, comparison: { greater_than: 0 }
 
 end
