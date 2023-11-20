@@ -1,2 +1,26 @@
 <h1>Welcome to CarConnect The best way to rent Funny car</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div class="border">Dashboard
+  <br>
+  <%= link_to "Dashboard", dashboard_path %>
+</div>
+<br>
+<br>
+<div class="border">Liens vers Controller Vehicules
+  <br>
+  <%= link_to "index vehicules", vehicules_path %>
+  <br>
+  <%= link_to "show vehicule", vehicule_path(1) %>
+</div>
+
+
+<div class="border">Liens vers Controller booking
+  <br>
+  <%= link_to "index booking", vehicule_bookings_path(1) %>
+  <br>
+  <%= link_to "show booking", vehicule_booking_path(1, 1) %>
+</div>
+
+<h3> Good luck pour mardi la Team WhatsNew 😀⛳️</h3>
