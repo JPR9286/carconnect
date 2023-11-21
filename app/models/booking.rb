@@ -9,5 +9,4 @@ class Booking < ApplicationRecord
   validates :date_fin, presence: true, comparison: { greater_than_or_equal_to: :date_debut }
   validates :total_prix, presence: true, comparison: { greater_than: 0 }
 
-
 end
