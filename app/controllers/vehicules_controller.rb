@@ -2,7 +2,8 @@ class VehiculesController < ApplicationController
   def index
   end
   def show
-
+    @vehicule = Vehicule.find(params[:id])
+    @booking = Booking.new
   end
   def new
 
