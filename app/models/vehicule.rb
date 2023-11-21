@@ -3,5 +3,5 @@ class Vehicule < ApplicationRecord
 
   has_many :bookings
   validates :user_id, presence: true
-  has_many_attached :photos
+  has_one_attached :photo
 end
