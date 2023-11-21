@@ -1,6 +1,8 @@
 class VehiculesController < ApplicationController
   def index
-    @vehicule = Vehicule.all
+
+    @vehicules = Vehicule.all
+
   end
   def show
     @vehicule = Vehicule.find(params[:id])

@@ -1,0 +1,48 @@
+.card-product {
+  width: 300px;
+
+  margin-bottom: auto;
+
+  .card_image {
+    border-radius: 23px;
+    width: 300px;
+    height: 257px;
+
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon {
+     height: 12px;
+    }
+  }
+
+  .container {
+
+    margin-bottom: 10px;
+    /* Ajustez la valeur selon vos besoins */
+  }
+
+  .description {
+
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: lighter;
+    line-height: normal;
+  }
+
+  .price {
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 250;
+    line-height: normal;
+  }
+
+}
