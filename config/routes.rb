@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :vehicules, only: [:index, :show, :new, :create, :edit, :update] do
-    resources :bookings, only: [ :create]
+    resources :bookings, only: [:index, :show, :create]
+    # index & show à supprimer, uniquement pour les tests dans un premier temps
   end
 
-  resource :bookings, only: [:destroy]
+  resource :bookings, only: [ :destroy]
+
   get '/dashboard', to: "pages#dashboard"
 
 end
