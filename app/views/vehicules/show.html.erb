@@ -5,43 +5,41 @@
     <div class="card col-lg-8 col-xs-12">
       <!-- Titre annonce -->
       <div class="border text-center">
-        <h2>Titre de la voiture</h2>
+        <h2><%= @vehicule.model %></h2>
       </div>
       <!-- div images -->
       <div class="border">
         <div class="row d-flex">
-          <div class="col-lg-8 col-xs-12">
-            <%= image_tag "homard.png", alt: "Grande image", class: "img-fluid" %>
+          <div class="col-lg-10 col-xs-12">
+            <%# <%= image_tag "homard.png", alt: "Grande image", class: "img-fluid" %>
+            <%= cl_image_tag @vehicule.photo.key, height: 300, width: 400, crop: :fill %>
           </div>
-          <div class="col-lg-4 col-xs-12">
-            <div class="row">
-              <div class="col-lg-12 col-sm-6">
-                <%= image_tag "homard_mayo.png", alt: "Petite image 1", class: "img-fluid" %>
-              </div>
-              <div class="col-lg-12 col-sm-6">
-                <%= image_tag "omar_sy.png", alt: "Petite image 2", class: "img-fluid" %>
-              </div>
-            </div>
-          </div>
-          </div>
+        </div>
       </div>
       <!-- détail annonce -->
       <div class="border">
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at pellentesque vehicula, nunc urna porttitor magna, sed condiment</p>
+        <p class="text-center"><%= @vehicule.description %></p>
       </div>
     </div>
     <!-- Contenu du new booking -->
     <div class="card col-lg-4 col-xs-12">
       <div class="text-center">
-        <h2>affichage du booking du véhicule</h2>
-        <div class="btn btn-primary">réservation</div>
-        <div class="border">
-          <%= simple_form_for @booking do |f| %>
-            <%= f.input :date_debut %>
-            <%= f.input :date_fin %>
-            <%= f.submit  %>
-          <% end %>
-
+        <h3>Faites-vous plaisir</h3>
+        <div class="booking" data-controller="toggle" >
+          <div class="btn btn-primary" data-action="click->toggle#fire">réservation</div>
+            <div data-toggle-target="togglableElement" class="d-none">
+              <div class="border">
+                <%= simple_form_for @booking do |f| %>
+                  <%= f.input :date_debut,
+                              as: :string,
+                              input_html: { data: { controller: "datepicker" } }  %>
+                  <%= f.input :date_fin,
+                              as: :string,
+                              input_html: { data: { controller: "datepicker" } }  %>
+                  <%= f.submit  %>
+                <% end %>
+              </div>
+            </div>
         </div>
       </div>
     </div>

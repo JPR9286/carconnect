@@ -1,19 +1,25 @@
-
 <div class="container">
-<h2>Ajoutez votre véhicule à la location</h2>
 
-  <div class ="">
+  <h2>Ajoutez votre véhicule à la location</h2>
 
-    <div class="form my-4">
-    <%= simple_form_for(@vehicule) do |f| %>
-      <%= f.input :category %>
-      <%= f.input :model %>
-      <%= f.input :description %>
-      <%= f.input :prix, label: 'Prix/jour' %>
-      <%= f.input :photo, as: :file, label: 'Ajoute une photo de ton bolide' %>
-      <%= f.submit class:"btn btn-primary btn-lg" %>
-    <% end %>
+    <div class ="d-flex justify-content-center">
+
+      <div class="form my-4">
+        <%= simple_form_for(@vehicule) do |f| %>
+        <%= f.input :category %>
+        <%= f.input :model %>
+        <%= f.input :description %>
+        <%= f.input :prix, label: 'Prix/jour' %>
+        <%= f.input :photo, as: :file, label: 'Ajoute une photo de ton bolide' %>
+        <%= f.submit class:"btn btn-primary btn-lg" %>
+        <% end %>
+      </div>
+
     </div>
-
-  </div>
 </div>
+
+<%#
+  t.string "category"
+    t.string "model"
+    t.string "description"
+    t.float "prix" %>
