@@ -6,6 +6,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @vehicules = current_user.vehicules
+    @bookings = current_user.bookings
     # initiliasation pour afficher sur le dashboard
   end
 end

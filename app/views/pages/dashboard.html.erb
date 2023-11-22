@@ -3,10 +3,20 @@
 <br>
 <div class="border">
   <h2>AFFICHAGE VEHICULES </h2>
+   <% @vehicules.each do |vehicule| %>
+    <p><%= vehicule.model %></p>
+    <p><%= vehicule.description %></p>
+    <p><%= vehicule.prix %></p>
+  <% end %>
 </div>
 <br>
 <div class="border">
   <h2>affichage bookings</h2>
+  <% @bookings.each do |booking| %>
+    <p><%= booking.vehicule.model %></p>
+    <p><%= booking.start_date %></p>
+    <p><%= booking.end_date %></p>
+  <% end %>
 </div>
 
 
