@@ -32,8 +32,17 @@
     </div>
     <!-- Contenu du new booking -->
     <div class="card col-lg-4 col-xs-12">
-      <div class="col-lg-8 col-xs-12">
+      <div class="text-center">
         <h2>affichage du booking du véhicule</h2>
+        <div class="btn btn-primary">réservation</div>
+        <div class="border">
+          <%= simple_form_for @booking do |f| %>
+            <%= f.input :date_debut %>
+            <%= f.input :date_fin %>
+            <%= f.submit  %>
+          <% end %>
+
+        </div>
       </div>
     </div>
   </div>
@@ -43,4 +52,3 @@
 <div class="bas de page">
 <br>
 <%= link_to "Home page", root_path %>
-</div>
