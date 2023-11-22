@@ -4,6 +4,26 @@ class BookingsController < ApplicationController
   def show
   end
   def new
-    
+
   end
+  def create
+    @vehicule = Vehicule.find(params[:vehicule_id])
+    @booking = Booking.new(booking_params)
+    @booking.vehicule = @vehicule
+    @booking.total_prix = (@booking.date_fin - @booking.date_debut).to_i * @vehicule.prix
+    @booking.user = current_user
+    if @booking.save!
+      booking_confirmation = true
+    else
+      render :new, status: :unprocessable_entity
+    end
+
+  end
+
+  private
+  def booking_params
+    params.require(:booking).permit(:date_debut, :date_fin, :commentaire)
+  end
+
+
 end
