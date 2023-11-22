@@ -38,25 +38,25 @@ file = URI.open("app/assets/images/photo_vehicule/moto_drole.jpeg")
 car4.photo.attach(io: file, filename: "car.jpeg", content_type: "image/jpeg")
 car4.save
 
-car5 = Vehicule.new(category: "Mp3", model: "No-Shame", description: "jdkjsgk", prix: 155)
+car5 = Vehicule.new(category: "Mp3", model: "No-Shame", description: "slip offert", prix: 155)
 car5.user = user
 file = URI.open("app/assets/images/photo_vehicule/MP3_750.jpg")
 car5.photo.attach(io: file, filename: "car.jpeg", content_type: "image/jpg")
 car5.save
 
-car6 = Vehicule.new(category: "jfshjks", model: "fjdjfd", description: "sfhfsqd dhfhd hjfq", prix: 160)
+car6 = Vehicule.new(category: "Car", model: "OmarCar", description: "MANGEZ DES OMARS DANS LA OMAR CARS, CONDUIT PAR OMAR !", prix: 160)
 car6.user = user
 file = URI.open("app/assets/images/photo_vehicule/omar_sy_car.jpeg")
 car6.photo.attach(io: file, filename: "car.jpeg", content_type: "image/jpeg")
 car6.save
 
-car7 = Vehicule.new(category: "fjkdfhkjf", model: "fhqkj", description: "FDHHJ JHQFHQSsdhfks", prix: 180)
+car7 = Vehicule.new(category: "On sait pas", model: "voiture boule", description: "Les tonneaux vont etre interminable", prix: 180)
 car7.user = user
 file = URI.open("app/assets/images/photo_vehicule/smart.jpg")
 car7.photo.attach(io: file, filename: "car.jpeg", content_type: "image/jpg")
 car7.save
 
-car8 = Vehicule.new(category: "fkjdfhjkd", model: "fqhhjbfqk", description: "hjqfj hfq kjjrkje", prix: 200)
+car8 = Vehicule.new(category: "car", model: "Cardinau", description: "marche au silex pendant 1km", prix: 200)
 car8.user = user
 file = URI.open("app/assets/images/photo_vehicule/voiture_dinau.jpeg")
 car8.photo.attach(io: file, filename: "car.jpeg", content_type: "image/jpeg")
