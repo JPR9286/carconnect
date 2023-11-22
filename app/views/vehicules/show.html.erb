@@ -10,7 +10,7 @@
       <!-- div images -->
       <div class="border">
         <div class="row d-flex">
-          <div class="col-lg-8 col-xs-12">
+          <div class="col-lg-10 col-xs-12">
             <%# <%= image_tag "homard.png", alt: "Grande image", class: "img-fluid" %>
             <%= cl_image_tag @vehicule.photo.key, height: 300, width: 400, crop: :fill %>
           </div>
@@ -24,15 +24,22 @@
     <!-- Contenu du new booking -->
     <div class="card col-lg-4 col-xs-12">
       <div class="text-center">
-        <h2>affichage du booking du véhicule</h2>
-        <div class="btn btn-primary">réservation</div>
-        <div class="border">
-          <%= simple_form_for @booking do |f| %>
-            <%= f.input :date_debut %>
-            <%= f.input :date_fin %>
-            <%= f.submit  %>
-          <% end %>
-
+        <h3>Faites-vous plaisir</h3>
+        <div class="booking" data-controller="toggle" >
+          <div class="btn btn-primary" data-action="click->toggle#fire">réservation</div>
+            <div data-toggle-target="togglableElement" class="d-none">
+              <div class="border">
+                <%= simple_form_for @booking do |f| %>
+                  <%= f.input :date_debut,
+                              as: :string,
+                              input_html: { data: { controller: "datepicker" } }  %>
+                  <%= f.input :date_fin,
+                              as: :string,
+                              input_html: { data: { controller: "datepicker" } }  %>
+                  <%= f.submit  %>
+                <% end %>
+              </div>
+            </div>
         </div>
       </div>
     </div>
