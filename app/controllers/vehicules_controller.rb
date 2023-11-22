@@ -8,16 +8,18 @@ class VehiculesController < ApplicationController
     @vehicule = Vehicule.find(params[:id])
     @booking = Booking.new
   end
+
   def new
     @vehicule = Vehicule.new
-    @vehicule.save
   end
+
   def create
     @vehicule = Vehicule.new(vehicule_params)
-    @vehicule.save
-
+    @vehicule.user = current_user
+    @vehicule.save!
     redirect_to vehicules_path(@vehicule)
   end
+
   def update
   end
   def edit
