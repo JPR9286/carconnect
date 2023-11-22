@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.total_prix = (@booking.date_fin - @booking.date_debut).to_i * @vehicule.prix
     @booking.user = current_user
     if @booking.save!
-      booking_confirmation = true
+      redirect_to  vehicule_bookings_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
