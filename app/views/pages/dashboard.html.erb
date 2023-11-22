@@ -13,9 +13,7 @@
 <div class="border">
   <h2>affichage bookings</h2>
   <% @bookings.each do |booking| %>
-    <p><%= booking.vehicule.model %></p>
-    <p><%= booking.start_date %></p>
-    <p><%= booking.end_date %></p>
+    <p><%= booking.vehicule.model %>, <%= booking.date_debut %>, <%= booking.date_fin %></p>
   <% end %>
 </div>
 
