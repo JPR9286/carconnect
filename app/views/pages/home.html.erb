@@ -1,58 +1,39 @@
 
-<a class="btn btn-primary mt-4 mx-2" href="./vehicules"> Découvrir nos véhicules </a>
 
-<div class="container">
-  <div class="row">
-    <div class="col d-flex justify-content-center">
-      <h1> CarConnect </h1>
-    </div>
+
+  <div class = "mt-2 fw-bold text-center mb-3">
+    <h1> CarConnect </h1>
   </div>
-  <div class="">
-    <div>
-      <h3> Faites vous plaisir </h3>
-      <h3> Louez un véhicule pas comme les autres </h3>
-      <ul>
-        <li>Mettre en location son vehicule</li>
-        <li>Louer un vehicule</li>
-        <li>Choisissez votre lieu de location</li>
-        <li>1 jour, une semaine, un mois ?</li>
-        <li>Adapté à tous les budgets ! </li>
+<div class="container">
 
-      <div class="d-flex align-items-end flex-column mb-3 px-3">
-        <%#= image_tag "bof_two.jpg" %>
-        <%= image_tag "bof_two.jpeg", width: 300 %>
-        <%= image_tag "bof_one.jpg", width: 300 %>
+    <div class="d-flex justify-content-between" id="main">
+
+    <div class= "ms-3 align-self-center text-center" id="description-home" style="width: 70%;">
+      <h3> Faites vous plaisir </h3>
+      <h3 class="mb-3"> Louez un véhicule pas comme les autres </h3>
+      <ul>
+        <p>Mettre en location son vehicule</p>
+        <p>Louer un vehicule</p>
+        <p>Choisissez votre lieu de location</p>
+        <p>1 jour, une semaine, un mois ?</>
+        <p>Adapté à tous les budgets ! </p>
+      </ul>
+    <a class="mb-3 btn btn-success" type="buton" mt-4 mx-2" href="./vehicules"> Découvrir nos véhicules </a>
+    </div>
+
+    <div class="d-inline-grid justify-content-center" >
+        <div class="images-home">
+        <div class="mb-3 mt-3">
+          <%= image_tag "bof_two.jpeg", width: 350 %>
+        </div>
+
+        <div class="mb-3">
+          <%= image_tag "bof_one.jpg", width: 350 %>
+        </div>
+
+        </div>
+
+        </div>
       </div>
 
     </div>
-      </ul>
-    </div>
-    <div>
-  </div>
-
-</div>
-
-
-
-<div class="border">Dashboard
-  <br>
-  <%= link_to "Dashboard", dashboard_path %>
-</div>
-<br>
-<br>
-<div class="border">Liens vers Controller Vehicules
-  <br>
-  <%= link_to "index vehicules", vehicules_path %>
-  <br>
-  <%= link_to "show vehicule", vehicule_path(1) %>
-</div>
-
-
-<div class="border">Liens vers Controller booking
-  <br>
-  <%= link_to "index booking", vehicule_bookings_path(1) %>
-  <br>
-  <%= link_to "show booking", vehicule_booking_path(1, 1) %>
-</div>
-
-<h3> Good luck pour mardi la Team WhatsNew 😀⛳️</h3>
