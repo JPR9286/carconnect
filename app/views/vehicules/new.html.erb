@@ -1,1 +1,15 @@
-<h2> Ajoutez votre véhicule à la location</h2>
+<h2>Ajoutez votre véhicule à la location</h2>
+
+<%= simple_form_for(@vehicule) do |f| %>
+  <%= f.input :category %>
+  <%= f.input :model %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+
+<%#
+  t.string "category"
+    t.string "model"
+    t.string "description"
+    t.float "prix" %>
