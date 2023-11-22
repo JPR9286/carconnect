@@ -17,7 +17,7 @@ class VehiculesController < ApplicationController
     @vehicule = Vehicule.new(vehicule_params)
     @vehicule.user = current_user
     @vehicule.save!
-    redirect_to vehicules_path(@vehicule)
+    redirect_to vehicules_path(@vehicules)
   end
 
   def update
@@ -28,6 +28,6 @@ class VehiculesController < ApplicationController
   private
 
   def vehicule_params
-    params.require(:vehicule).permit(:category, :model, :description, :prix)
+    params.require(:vehicule).permit(:category, :model, :description, :prix, :photo)
   end
 end
