@@ -5,31 +5,24 @@
 
 <div class="container">
   <div class="row">
-    <div class="container">
-      <div class="row">
-        <% @vehicules.each do |vehicule| %>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column">
-            <%= link_to vehicule_path(vehicule), style: "text-decoration: none; color: inherit;" do %>
-            <div class="card-product">
-              <%= cl_image_tag vehicule.photo.key, class: "card_image", crop: :fill, height: 200, width: 200 %>
-              <div class="model">
-                <div class="top d-flex justify-content-between">
-                  <h2 class="m-0"><%= vehicule.model%> </h2>
-                  <%= image_tag "car.jpg", class: "icon" %>
-                </div>
-                     <div class="category">
-                        <p><%= vehicule.category  %> <br>
-                     </div>
-                       <div class="description">
-                          <%= vehicule.description %>
-                        </div>
-                          <div class="price">
-                             <%= vehicule.prix%></b>$/jour</p>
-                          </div>
-              </div>
-            </div>
-        <% end %>
-          </div>
-        <% end %>
+  <div class="container">
+  <div class="row">
+  <% @vehicules.each do |vehicule| %>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
 
-      </div>
+      <%= link_to vehicule_path(vehicule), style: "text-decoration: none; color: inherit;" do %>
+        <div class="card-product">
+          <div class="card-photo-title d-flex flex-column ">
+            <%= cl_image_tag vehicule.photo.key, crop: :fill, height: 200, width: 200,  class: "card_image" %>
+            <h3 class="m-0"><%= vehicule.model %></h3>
+          </div>
+          <div class="card-text d-flex align-items-center">
+            <p><%= vehicule.description %></p>
+          </div>
+          <strong> <p class="m-0"><%= vehicule.prix %> euros</p></strong>
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
