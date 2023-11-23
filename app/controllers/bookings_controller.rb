@@ -13,7 +13,9 @@ class BookingsController < ApplicationController
     @booking.total_prix = (@booking.date_fin - @booking.date_debut).to_i * @vehicule.prix
     @booking.user = current_user
     if @booking.save!
-      redirect_to  vehicule_bookings_path(@booking)
+      # suppression class D-NONE de la data-toggle-target="tooglablebookingElement"
+    #
+    #  redirect_to  vehicule_bookings_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end

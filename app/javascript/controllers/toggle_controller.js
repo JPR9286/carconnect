@@ -11,6 +11,7 @@ export default class extends Controller {
   }
 
   booking() {
+    console.log("booking");
     this.tooglablebookingElementTarget.classList.toggle("d-none");
   }
 
