@@ -10,3 +10,13 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-lewagon {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.dropdown-menu {
+  z-index: 1000;
+}

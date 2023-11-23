@@ -1,0 +1,13 @@
+
+    <div class="col-lg-8 col-xl-13 ">
+        <div class="card-product">
+          <%= cl_image_tag vehicule.photo.key, class: "img-fluid", crop: :fill %>
+          <div class="card-product-infos">
+            <div class="top">
+              <h2 class="m-0"><%= vehicule.model %> </h2>
+              <%= image_tag "car.jpg", class: "icon"%>
+            </div>
+            <p><%= vehicule.category  %> <br> <%= vehicule.description %> <br><b><%= vehicule.prix%></b>$/jour</p>
+          </div>
+        </div>
+      </div>

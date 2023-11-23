@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500&display=swap');
+
+    </style>
     <title>Carconnect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
 
   <body>
     <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-
     <%= yield %>
+ <%= render "shared/flashes" %>
   </body>
 </html>

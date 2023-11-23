@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_152255) do
     t.string "model"
     t.string "description"
     t.float "prix"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_vehicules_on_user_id"

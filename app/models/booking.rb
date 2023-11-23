@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :vehicule
 
+
   validates :user_id, presence: true
   validates :vehicule_id, presence: true
   validates :date_debut, presence: true
