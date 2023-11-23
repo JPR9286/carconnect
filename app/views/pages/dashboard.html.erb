@@ -1,12 +1,32 @@
 <h1>DASHBOARD USER</h1>
 
+<%= link_to "Home page", root_path %>
 <br>
 <div class="border">
   <h2>AFFICHAGE VEHICULES </h2>
    <% @vehicules.each do |vehicule| %>
-    <p><%= vehicule.model %></p>
-    <p><%= vehicule.description %></p>
-    <p><%= vehicule.prix %></p>
+   <div class="card-product">
+    <%= image_tag vehicule.photo.url class: "card_image", crop: :fill, height: 200, width: 200 %>
+  <div class="model">
+    <div class="top d-flex justify-content-between">
+      <h2 class="m-0"><%= vehicule.model%> </h2>
+        <%= image_tag vehicule.photo.url, class: "icon" %>
+    </div>
+
+    <div class="category">
+      <p><%= vehicule.category  %> <br>
+    </div>
+
+    <div class="description">
+      <%= vehicule.description %>
+    </div>
+
+      <div class="price">
+        <%= vehicule.prix%></b>$/jour</p>
+      </div>
+
+    </div>
+</div>
     <%= link_to "Delete",
       vehicule_path(vehicule),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
@@ -17,7 +37,37 @@
 <div class="border">
   <h2>affichage bookings</h2>
   <% @requested_bookings.each do |booking| %>
-    <p><%= booking.vehicule.model %>, <%= booking.date_debut %>, <%= booking.date_fin %>, status: <%= booking.status %></p>
+
+<div class="card-product">
+    <%= image_tag booking.vehicule.photo.url class: "card_image", crop: :fill, height: 200, width: 200 %>
+  <div class="model">
+    <div class="top d-flex justify-content-between">
+      <h2 class="m-0"><%= booking.vehicule.model%> </h2>
+        <%= image_tag booking.vehicule.photo.url, class: "icon" %>
+    </div>
+
+    <div class="category">
+      <p><%= booking.vehicule.category  %> <br>
+    </div>
+
+    <div class="description">
+      <%= booking.vehicule.description %>
+    </div>
+
+      <div class="price">
+        <%= booking.vehicule.prix%></b>$/jour</p>
+      </div>
+
+    </div>
+</div>
+
+    <h3>Details Reservation en cours:</h3>
+    <p><strong>Model:</strong> <%= booking.vehicule.model %>,</p>
+    <p><strong>Date debut:</strong> <%= booking.date_debut %>,</p>
+    <p><strong>Date du fin:</strong> <%= booking.date_fin %>,</p>
+    <p><strong> status:</strong> <%= booking.status %></p>
+    <p><strong>TO: </strong><%= booking.user.email %></p>
+
     <%= link_to "accept",
       accept_bookings_path(booking),
       data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}
@@ -31,5 +81,4 @@
 </div>
 
 
-<br>
-<%= link_to "Home page", root_path %>
+
