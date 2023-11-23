@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
 
   end
 
-  
+
 
   def accept
     @booking = Booking.find(params[:id])
@@ -37,6 +37,7 @@ class BookingsController < ApplicationController
 
 
   private
+  
   def booking_params
     params.require(:booking).permit(:date_debut, :date_fin, :commentaire)
   end
