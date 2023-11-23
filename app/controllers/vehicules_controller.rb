@@ -25,6 +25,12 @@ class VehiculesController < ApplicationController
   def edit
   end
 
+  def destroy
+    @vehicule = Vehicule.find(params[:id])
+    @vehicule.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
 
   def vehicule_params
