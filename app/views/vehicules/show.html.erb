@@ -26,7 +26,7 @@
       <div class="text-center">
         <h3>Faites-vous plaisir</h3>
         <div class="booking" data-controller="toggle" >
-          <div class="btn btn-primary" data-action="click->toggle#fire">
+          <div class="btn btn-primary" id="resabtn" data-action="click->toggle#fire" data-toggle-target="togglablebookingElement">
             réservation
           </div>
           <div data-toggle-target="togglableElement" class="d-none">
@@ -39,16 +39,9 @@
                             as: :string,
                             input_html: { data: { controller: "datepicker" } }  %>
                 <%= f.input :commentaire %>
-                <%= f.submit "Réserver", input_html: { data: { action: "click->toggle#booking" } } %>
+                <%= f.submit "Réserver" %>
               <% end %>
             </div>
-          </div>
-          <div class="btn btn-primary" data-action="click->toggle#booking">
-            test booking
-          </div>
-          <div data-toggle-target="tooglablebookingElement" class="d-none" >
-              <h3>Votre réservation est confirmée.</h3>
-              <p> Vous allez recevoir un mail de confirmation avec les modalités pour contacter le propriétaire</p>
           </div>
         </div>
       </div>

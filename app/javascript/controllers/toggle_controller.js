@@ -8,11 +8,13 @@ export default class extends Controller {
   }
   fire() {
     this.togglableElementTarget.classList.toggle("d-none");
+    const btn = document.getElementById("resabtn");
+    btn.classList.add("d-none");
   }
 
   booking() {
     console.log("booking");
-    this.tooglablebookingElementTarget.classList.toggle("d-none");
+
   }
 
 }

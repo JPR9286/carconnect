@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     if @booking.save!
       # suppression class D-NONE de la data-toggle-target="tooglablebookingElement"
     #
-    #  redirect_to  vehicule_bookings_path(@booking)
+    redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
