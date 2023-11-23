@@ -7,13 +7,26 @@
     <p><%= vehicule.model %></p>
     <p><%= vehicule.description %></p>
     <p><%= vehicule.prix %></p>
+    <%= link_to "Delete",
+      vehicule_path(vehicule),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+   %>
   <% end %>
 </div>
 <br>
 <div class="border">
   <h2>affichage bookings</h2>
-  <% @bookings.each do |booking| %>
-    <p><%= booking.vehicule.model %>, <%= booking.date_debut %>, <%= booking.date_fin %></p>
+  <% @requested_bookings.each do |booking| %>
+    <p><%= booking.vehicule.model %>, <%= booking.date_debut %>, <%= booking.date_fin %>, status: <%= booking.status %></p>
+    <%= link_to "accept",
+      accept_bookings_path(booking),
+      data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}
+   %>
+
+   <%= link_to "decline",
+      decline_bookings_path(booking),
+      data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}
+   %>
   <% end %>
 </div>
 

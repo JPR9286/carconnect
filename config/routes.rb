@@ -10,12 +10,17 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :vehicules, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :vehicules, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:index, :show, :create]
     # index & show à supprimer, uniquement pour les tests dans un premier temps
   end
 
-  resource :bookings, only: [ :destroy]
+  resource :bookings, only: [] do
+    member do
+      patch ":id/accept", to: "bookings#accept", as: :accept
+      patch ":id/decline", to: "bookings#decline", as: :decline
+    end
+  end
 
   get '/dashboard', to: "pages#dashboard"
 
