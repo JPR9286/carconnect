@@ -1,16 +1,21 @@
 // Specific CSS for your home-page
 
 .container-home{
-  background-color: rgba(199, 215, 183, 0.452);
+  background-color: rgba(255, 255, 255, 0.452);
   border-radius: 20px;
 }
 
 #description-home {
-  background-color: rgb(186, 203, 206);
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
 
 }
 
 .images-home {
   border-radius: 20px;
+}
+
+body {
+  // background: linear-gradient(90deg, #70D6FF 0%, rgba(255,151,112,1) 40%, rgba(233,255,112,1) 100%);
+  background: url('background2.png');
 }
