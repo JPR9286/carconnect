@@ -13,14 +13,16 @@ class BookingsController < ApplicationController
     @booking.total_prix = (@booking.date_fin - @booking.date_debut).to_i * @vehicule.prix
     @booking.user = current_user
     if @booking.save!
-      booking_confirmation = true
+      # suppression class D-NONE de la data-toggle-target="tooglablebookingElement"
+    #
+    redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
 
   end
 
-  
+
 
   def accept
     @booking = Booking.find(params[:id])
@@ -37,6 +39,7 @@ class BookingsController < ApplicationController
 
 
   private
+  
   def booking_params
     params.require(:booking).permit(:date_debut, :date_fin, :commentaire)
   end

@@ -19,8 +19,6 @@
 
 <div class="container">
   <div class="row">
-  <div class="container">
-  <div class="row">
   <% @vehicules.each do |vehicule| %>
     <div class="col-12 col-sm-6 col-md-6 col-lg-4">
 
@@ -28,7 +26,7 @@
         <div class="card-product">
           <div class="card-photo-title d-flex flex-column ">
             <%= cl_image_tag vehicule.photo.key, crop: :fill, height: 200, width: 200,  class: "card_image" %>
-            <h3 class="m-0"><%= vehicule.model %></h3>
+            <h3 class="m-0" ><%= vehicule.model %></h3>
           </div>
           <div class="card-text d-flex align-items-center">
             <p><%= vehicule.description %></p>
@@ -41,10 +39,11 @@
    </div>
   <% end %>
 
-      </div>
-<div style="width: 100%; height: 600px;"
+  </div>
+  <div style="width: 100%; height: 600px;"
+  id="map"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-
+  </div>
 </div>
