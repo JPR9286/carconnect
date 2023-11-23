@@ -1,8 +1,13 @@
 class VehiculesController < ApplicationController
   def index
-
     @vehicules = Vehicule.all
-
+    @markers = @vehicules.geocoded.map do |vehicule|
+      {
+        lat: vehicule.latitude,
+        lng: vehicule.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {vehicule: vehicule})
+      }
+    end
   end
   def show
     @vehicule = Vehicule.find(params[:id])

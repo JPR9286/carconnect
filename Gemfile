@@ -26,6 +26,8 @@ gem "stimulus-rails"
 # Ajout Cloudinary
 gem "cloudinary"
 
+# Ajout Geocoder
+gem "geocoder"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
