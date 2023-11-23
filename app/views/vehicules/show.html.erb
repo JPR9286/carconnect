@@ -26,27 +26,24 @@
       <div class="text-center">
         <h3>Faites-vous plaisir</h3>
         <div class="booking" data-controller="toggle" >
-          <div class="btn btn-primary" data-action="click->toggle#fire">réservation</div>
-            <div data-toggle-target="togglableElement" class="d-none">
-              <div class="border">
-                <%= simple_form_for [@vehicule, @booking] do |f| %>
-                  <%= f.input :date_debut,
-                              as: :string,
-                              input_html: { data: { controller: "datepicker" } }  %>
-                  <%= f.input :date_fin,
-                              as: :string,
-                              input_html: { data: { controller: "datepicker" } }  %>
-                  <%= f.input :commentaire %>
-                  <%= f.submit "Réserver", input_html: { data: { action: "click->toggle#booking" } } %>
-                <% end %>
-              </div>
+          <div class="btn btn-primary" id="resabtn" data-action="click->toggle#fire" data-toggle-target="togglablebookingElement">
+            réservation
+          </div>
+          <div data-toggle-target="togglableElement" class="d-none">
+            <div class="border">
+              <%= simple_form_for [@vehicule, @booking] do |f| %>
+                <%= f.input :date_debut,
+                            as: :string,
+                            input_html: { data: { controller: "datepicker" } }  %>
+                <%= f.input :date_fin,
+                            as: :string,
+                            input_html: { data: { controller: "datepicker" } }  %>
+                <%= f.input :commentaire %>
+                <%= f.submit "Réserver" %>
+              <% end %>
             </div>
-
-            <div data-toggle-target="tooglablebookingElement" class="d-none" >
-                <h3>Votre réservation est confirmée.</h3>
-                <p> Vous allez recevoir un mail de confirmation avec les modalités pour contacter le propriétaire</p>
-            </div>
-            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
