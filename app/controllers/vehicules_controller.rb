@@ -8,7 +8,12 @@ class VehiculesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {vehicule: vehicule})
       }
     end
+
+    if params[:query].present?
+      @vehicules = @vehicules.where("category ILIKE ?", "%#{params[:query]}%")
+    end
   end
+
   def show
     @vehicule = Vehicule.find(params[:id])
     @booking = Booking.new
