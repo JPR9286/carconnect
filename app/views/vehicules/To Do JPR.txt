@@ -8,7 +8,7 @@ Actions Jérôme :
     * add columns ok
     * modif seed  ok
   - affichage carte
-    * à partir des véhicules affichés dans l'index
+    * à partir des véhicules affichés dans l'index ok 
 
 
 - booking
