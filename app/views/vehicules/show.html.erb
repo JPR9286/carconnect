@@ -39,7 +39,7 @@
                             as: :string,
                             input_html: { data: { controller: "datepicker" } }  %>
                 <%= f.input :commentaire %>
-                <%= f.submit "Réserver", %>%
+                <%= f.submit "Réserver", input_html: { data: { action: "click->toggle#booking" } } %>
               <% end %>
             </div>
           </div>

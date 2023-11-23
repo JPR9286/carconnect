@@ -19,7 +19,10 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
   end
+
+
 
   def accept
     @booking = Booking.find(params[:id])
