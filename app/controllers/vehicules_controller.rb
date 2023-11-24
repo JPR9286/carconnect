@@ -11,12 +11,12 @@ class VehiculesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {vehicule: vehicule})
       }
     end
-
   end
 
   def show
     @vehicule = Vehicule.find(params[:id])
     @booking = Booking.new
+
   end
 
   def new
