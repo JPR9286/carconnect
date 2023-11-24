@@ -40,7 +40,7 @@
 .icon {
   height: 12px;
 }
-.container {
+.card-container {
   display: flex;
   justify-content: space-between;
 
@@ -48,5 +48,15 @@
     height: 100vh;
     position: sticky;
     top: 0;
+  }
+}
+.btn-warning {
+  background-color: #FF70A6;
+  border-color: #FF70A6;
+  color: #fff;
+  &:hover {
+    background-color: #FF70A6;
+    border-color: #FF70A6;
+    color: #fff;
   }
 }
