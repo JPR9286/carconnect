@@ -11,6 +11,7 @@ class VehiculesController < ApplicationController
 
     if params[:query].present?
       @vehicules = @vehicules.where("category ILIKE ?", "%#{params[:query]}%")
+      
     end
   end
 

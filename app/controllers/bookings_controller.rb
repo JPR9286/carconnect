@@ -10,10 +10,8 @@ class BookingsController < ApplicationController
     @vehicule = Vehicule.find(params[:vehicule_id])
     @booking = Booking.new(booking_params)
 
-    @booking.date_debut = @booking.date_debut[0,9]
-    @booking.date_fin  = @booking.date_debut[-10,-1]
-raise
-
+    @booking.date_debut = @booking.commentaire[0,10].to_date
+    @booking.date_fin  = @booking.commentaire[-10,10].to_date
     @booking.vehicule = @vehicule
     @booking.total_prix = (@booking.date_fin - @booking.date_debut).to_i * @vehicule.prix
     @booking.user = current_user
@@ -44,7 +42,7 @@ raise
   private
 
   def booking_params
-    params.require(:booking).permit(:date_debut, :date_fin, :commentaire)
+    params.require(:booking).permit(:commentaire)
   end
 
 
