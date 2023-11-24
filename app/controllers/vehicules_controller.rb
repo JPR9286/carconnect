@@ -1,6 +1,9 @@
 class VehiculesController < ApplicationController
   def index
     @vehicules = Vehicule.all
+      if params[:query].present?
+        @vehicules = @vehicules.where("category ILIKE ?", "%#{params[:query]}%")
+      end
     @markers = @vehicules.geocoded.map do |vehicule|
       {
         lat: vehicule.latitude,
@@ -9,9 +12,6 @@ class VehiculesController < ApplicationController
       }
     end
 
-    if params[:query].present?
-      @vehicules = @vehicules.where("category ILIKE ?", "%#{params[:query]}%")
-    end
   end
 
   def show
