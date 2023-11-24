@@ -6,13 +6,20 @@
     <%= link_to vehicules_path(query: cat[0]), class: "btn" do %>
       <span style="font-size:29px;"><i class="<%= cat[1] %>"></i></span>
     <% end %>
+
   <% end %>
 
-  <%= link_to vehicules_path do %>
-    <i class="fa-solid fa-circle-xmark"></i>
+  <%= link_to vehicules_path, class: "btn" do %>
+    <i class="fa-solid fa-circle-xmark delete-icon"></i>
   <% end %>
+
+
+    <%# <i class="fa-solid fa-circle-xmark"></i>
+    <span style="font-size:29px"></span> %>
+
 </div>
 
+    <span style="font-size:29px"></span>
 
 <div class="container">
   <div class="row">
@@ -37,13 +44,10 @@
   <% end %>
 
   </div>
-
-    <div class="col-lg-4" style="padding-right: 0;">
-      <div id="map" style="width: 100%; height: 600px; position: sticky; top: 0;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
+  <div style="width: 100%; height: 600px;"
+  id="map"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
