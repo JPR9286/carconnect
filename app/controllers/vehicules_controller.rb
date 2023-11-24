@@ -11,12 +11,14 @@ class VehiculesController < ApplicationController
 
     if params[:query].present?
       @vehicules = @vehicules.where("category ILIKE ?", "%#{params[:query]}%")
+      
     end
   end
 
   def show
     @vehicule = Vehicule.find(params[:id])
     @booking = Booking.new
+
   end
 
   def new

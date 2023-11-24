@@ -76,7 +76,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_23_123409) do
     t.string "model"
     t.string "description"
     t.float "prix"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
