@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  attr_accessor :date_resa
   belongs_to :user
   belongs_to :vehicule
 
