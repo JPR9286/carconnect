@@ -50,3 +50,13 @@
     top: 0;
   }
 }
+.btn-warning {
+  background-color: #FF70A6;
+  border-color: #FF70A6;
+  color: #fff;
+  &:hover {
+    background-color: #FF70A6;
+    border-color: #FF70A6;
+    color: #fff;
+  }
+}

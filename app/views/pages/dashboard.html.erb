@@ -1,75 +1,81 @@
-<div class="container">
+  <div class="container">
+
 
 <div class="meslocations">
-    <div class="row">
-      <h2>mes locations</h2>
-      <% @bookings.each do |booking| %>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column">
-          <div class="card-product">
-            <%= image_tag booking.vehicule.photo.url class: "card_image", crop: :fill, height: 200, width: 200 %>
-            <div class="model">
-              <div class="top d-flex justify-content-between">
-                <h2 class="m-0"><%= booking.vehicule.model%> </h2>
-              </div>
-              <div class="price">
-                <p><strong>Total location : </strong><%= booking.total_prix%> $</p>
-              </div>
-              <p><strong>Date debut:</strong> <%= booking.date_debut %></p>
-              <p><strong>Date du fin:</strong> <%= booking.date_fin %></p>
-              <p><strong> status:</strong> <%= booking.status %></p>
-              <p><strong>TO: </strong><%= booking.user.email %></p>
-              <%= link_to "decline",
-                  decline_bookings_path(booking),
-                  data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}
-              %>
-              <br>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
 
-</div>
-
-<div class="mesvehicules">
-    <%# mes voitures %>
-    <div class="row">
-      <h2>Mes voitures à louer</h2>
-      <% @bookings.each do |booking| %>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column">
-          <div class="card-product">
-            <%= image_tag booking.vehicule.photo.url class: "card_image", crop: :fill, height: 200, width: 200 %>
-              <div class="model">
-
+    <h2>mes locations</h2>
+      <div class="card-flex">
+          <% @bookings.each do |booking| %>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column">
+              <div class="card-product">
+                <%= image_tag booking.vehicule.photo.url, crop: :fill, height: 200, width: 200,  class: "card_image"%>
+                <div class="model">
                 <div class="top d-flex justify-content-between">
                   <h2 class="m-0"><%= booking.vehicule.model%> </h2>
                 </div>
-                <div class="category">
-                  <p><%= booking.vehicule.category  %> <br>
-                </div>
-                <div class="description">
-                  <%= booking.vehicule.description %>
-                </div>
-                <div class="price">
-                  <%= booking.vehicule.prix%></b>$/jour</p>
-                </div>
+                <div>
+                  <p><strong>Total location : </strong><%= booking.total_prix%> $</p>
+                  <p><strong>Date debut:</strong> <%= booking.date_debut %></p>
+                  <p><strong>Date du fin:</strong> <%= booking.date_fin %></p>
+                  <p><strong> status:</strong> <%= booking.status %></p>
+                  <p><strong>TO: </strong><%= booking.user.email %>&nbsp;&nbsp;&nbsp;
 
+                  <%= link_to "decline",
+                      decline_bookings_path(booking),
+                      data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}
+                  %>
+                  </p>
+                </div>
               </div>
+              </div>
+            </div>
+          <% end %>
           </div>
-              <%= link_to "Delete",
-                vehicule_path(booking.vehicule),
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-            %>
-        </div>
-      <% end %>
     </div>
+
+
+
+
+<div class="mesvehicules">
+    <%# mes voitures %>
+  <h2>Mes voitures à louer</h2>
+  <div class="card-flex">
+    <% @vehicules.each do |vehicule| %>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column">
+      <div class="card-product">
+        <%= image_tag vehicule.photo.url, crop: :fill, height: 200, width: 200,  class: "card_image"%>
+        <div class="model">
+          <div class="top d-flex justify-content-between">
+            <h2 class="m-0"><%= vehicule.model%> </h2>
+          </div>
+          <div class="category">
+            <p><%= vehicule.category  %> <br>
+          </div>
+          <div class="description">
+            <%= vehicule.description %>
+          </div>
+          <div class="price">
+            <%= vehicule.prix%></b>$/jour</p>
+          </div>
+        </div>
+            <%= link_to "Delete",
+              vehicule_path(vehicule),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
     <%# locations de mes voitures %>
-    <div class="row">
-      <h2>Les locations de mes véhicules</h2>
+
+    <h2>Les locations de mes véhicules</h2>
+    <div class="card-flex">
       <% @requested_bookings.each do |booking| %>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column">
           <div class="card-product">
-            <%= image_tag booking.vehicule.photo.url class: "card_image", crop: :fill, height: 200, width: 200 %>
+            <%= image_tag booking.vehicule.photo.url, crop: :fill, height: 200, width: 200,  class: "card_image"%>
             <div class="model">
               <div class="top d-flex justify-content-between">
                 <h2 class="m-0"><%= booking.vehicule.model%> </h2>
@@ -80,21 +86,22 @@
               <p><strong>Date debut:</strong> <%= booking.date_debut %>,</p>
               <p><strong>Date du fin:</strong> <%= booking.date_fin %>,</p>
               <p><strong> status:</strong> <%= booking.status %></p>
-              <p><strong>TO: </strong><%= booking.user.email %></p>
+              <p><strong>TO: </strong><%= booking.user.email %>&nbsp;&nbsp;&nbsp;
               <% if booking.status == 'pending' %>
                 <%= link_to "accept",
                   accept_bookings_path(booking),
                   data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}
-                %>
+                %>&nbsp;&nbsp;&nbsp;
                 <%= link_to "decline",
                     decline_bookings_path(booking),
                     data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}
                 %>
               <% end %>
+              </p>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-  </div>
+
 </div>
