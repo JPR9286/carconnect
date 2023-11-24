@@ -8,11 +8,15 @@
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(15px);
   margin-bottom: 20px;
+  color: #446;
+  h3{
+    color: #FF70A6;
+  }
 
 }
 
 .card-text {
-  font-size: 20px;
+  font-size: 23px;
   height: calc(100% - 261px); ;
 
 }
