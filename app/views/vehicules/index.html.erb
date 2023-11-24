@@ -30,7 +30,7 @@
       <%= link_to vehicule_path(vehicule), style: "text-decoration: none; color: inherit;" do %>
         <div class="card-product">
           <div class="card-photo-title d-flex flex-column ">
-            <%= cl_image_tag vehicule.photo.key, crop: :fill, height: 200, width: 200,  class: "card_image" %>
+            <%= cl_image_tag vehicule.photo.key, height: 200, width: 200,  class: "card_image" %>
             <h3 class="m-0" ><%= vehicule.model %></h3>
           </div>
           <div class="card-text d-flex align-items-center">
